@@ -1,0 +1,47 @@
+h1 {
+  color: gold;
+}
+
+h4 {
+  color: gold;
+}
+
+img {
+  max-width: 600px;
+  height: auto;
+  margin: .5em;
+}
+
+.thumb img {
+  height: 100px;
+  padding: 2px;
+  border: 1px solid gold;
+  border-radius: 2px;
+}
+
+.img-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 1em;
+  padding: .5em;
+  color: darkblue;
+}
+
+nav a:hover {
+  background-color: lightblue;
+}
+
+ul {
+  list-style: none;
+}
