@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Gallery from './Galler';
+import Gallery from './Gallery';
 import './index.css';
 
 let app = <Gallery />;

@@ -1,13 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-const Header = (tab) => {
+function Header(props) {
   return (
     <div>
       <ul>
-        <li>Thumbnail</li>
-        <li>FullSize</li>
-        <li>Details</li>
+        <a href='#' onClick={() => props.changeTab('thumbnail')}><li>Thumbnail</li></a>
+        <a href='#' onClick={() => props.changeTab('fullsize')}><li>FullSize</li></a>
+        <a href='#' onClick={() => props.changeTab('details')}><li>Details</li></a>
       </ul>
+      <p>Current tab is: {props.tab}</p> 
+    </div>
+  );
+};
+
+Header.propTypes = {
+  tab: PropTypes.string.isRequired,
+  changeTab: PropTypes.func.isRequired,
+};
+
+const Image = () => {
+  return (
+    <div>
+      This is the image view.
     </div>
   );
 };
@@ -18,6 +32,7 @@ class Gallery extends Component {
     this.state = {
       tab: 'thumbnail',
     };
+
     this.changeTab = this.changeTab.bind(this);
   }
 
@@ -31,7 +46,8 @@ class Gallery extends Component {
     return (
       <div>
         Gallery top level component here.
-        <Header />
+        <Header tab={this.state.tab} changeTab={this.changeTab}/>
+        <Image />
       </div> 
     );
   }
