@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import images from './images';
 import './Gallery.css';
 
 function Header(props) {
@@ -45,24 +46,6 @@ const Image = (props) => {
   }
 };
 
-const imageObj = {
-  src: 'https://thoughtcatalog.files.wordpress.com/2013/09/fnllll.png?w=584&h=478',
-  alt: 'Coach Taylor on the Panthers field',
-  type: 'PNG',
-};
-
-const imageObj2 = {
-  src: 'http://www.texasmonthly.com/wp-content/uploads/2015/09/coach-taylor-rain.jpg',
-  alt: 'Coach Taylor in the rain on the sidelines',
-  type: 'JPG',
-};
-
-const imageObj3 = {
-  src: 'http://4.bp.blogspot.com/-VMuqcFIUbe4/UNpA2FE5c5I/AAAAAAAAAFw/rw6YL6rP7hc/s1600/coach+t+with+the+lions.jpg',
-  alt: 'Coach Taylor frowns in the Lions locker room',
-  type: 'JPG',
-};
-
 Image.propTypes = {
   tab: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
@@ -90,9 +73,9 @@ class Gallery extends Component {
         <h1>Welcome to the Coach Eric Taylor Gallery</h1>
         <Header tab={this.state.tab} changeTab={this.changeTab}/>
         <div className='img-wrapper'>
-          <Image tab={this.state.tab} image={imageObj}/>
-          <Image tab={this.state.tab} image={imageObj2}/>
-          <Image tab={this.state.tab} image={imageObj3}/>
+          <Image tab={this.state.tab} image={images[0]}/>
+          <Image tab={this.state.tab} image={images[1]}/>
+          <Image tab={this.state.tab} image={images[2]}/>
         </div>
       </div> 
     );
